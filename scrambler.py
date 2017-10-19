@@ -59,7 +59,7 @@ def get_old_key():
 
 def make_new_key():
     key_choice = input('Enter a new key: ')
-    language_string = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+=-/.,><;'
+    language_string = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+=-/.,><;? '
     language_array = list(language_string)
     language = []
     for symbol in language_array:
@@ -75,12 +75,12 @@ def write_message(scrambled):
     new_message = ""
     message_array = list(message)
     for letter in message_array:
-        if letter == ' ':
-            new_message += ' '
-        else:
-            corresponding_pair = (x for x in scrambled if letter.lower() == x[0])
-            corresponding_pair = next(corresponding_pair)
-            new_message += corresponding_pair[1]
+        #if letter == ' ':
+        #   new_message += ' '
+        #else:
+        corresponding_pair = (x for x in scrambled if letter.lower() == x[0])
+        corresponding_pair = next(corresponding_pair)
+        new_message += corresponding_pair[1]
     print(new_message)
     loop(scrambled)
 
